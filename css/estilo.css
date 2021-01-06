@@ -1,0 +1,145 @@
+.carousel-img{
+    height: 95vh;
+    object-fit: cover;
+}
+
+.fondoOscuro{
+    background-color: rgba(19, 19, 19, 0.8);
+    border-radius: 2px;
+}
+
+.rotar-20{
+    transform: rotate(-20deg);
+}
+
+body{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.fuente-comun{
+    font-family: sans-serif;
+}
+
+p{
+    font-size: 1.1em;
+}
+
+.nav-link{
+    font-weight: 600;
+} 
+
+.shadow{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.7)!important
+}
+
+.seccion-productos{
+    background-image: url('../img/maderaNegra.jpg');
+}
+
+.seccion-locales, footer, .seccion-nosotros{
+    background-color: rgb(39, 39, 39);
+}
+
+.locales{
+    height: 500px;
+}
+
+.titulo-local{
+    font-weight: 900;
+}
+
+.mapa{
+    height: 100%;
+    width: 100%;
+}
+
+.dropdown-item:hover{
+    background: #212529;
+    border-radius: 2px;
+    color:white
+}
+
+.seccion-eventos{
+    background-image: url('../img/eventos.jpg');
+}
+
+.iframe{
+    min-height: 300px;
+}
+
+.botonUp{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 2000;
+    font-size: 2.0em;
+    display: none;
+}
+
+footer li{
+    list-style: none;
+}
+footer a{
+    text-decoration: none;
+}
+
+
+.text-small{
+    font-size: 0.8em;
+}
+
+.icono-social{
+    width: 40px;
+}
+
+.animacion{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.mostrarArriba {
+    animation: mostrarArriba 1s;
+}
+
+.marca{
+    text-decoration: none;
+}
+@keyframes mostrarArriba{
+    0% {
+        transform: translateY(60px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.modal{
+    z-index: 3000;
+}
+
+.video{
+    width: 100%;
+    min-height: 300px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.seccion-franquicias{
+    background: rgb(214, 214, 214);
+}
+
+.text-gris{
+    color:#808080;
+}
+
+.franquicia-info{
+    width: 100%;
+}
+
+@media (min-width: 764px ){
+    .franquicia-info{
+        width: 50%;
+    }
+}

@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <!-- Iconos w3schools -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="./css/estilo.css">
+
+    <link rel="shortcut icon" href="./img/icono.ico"/>
+    <title>Pizzeria</title>
+  </head>
+  <body id='inicio'>
+    <a href='#inicio' class='botonUp btn btn-dark py-2 px-4 shadow border border-white' id='botonUp'><i class="fas fa-arrow-up"></i></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 shadow sticky-top">
+        <div class="container">
+            <a href="#inicio" class="h1 text-dark marca">
+                <i class="fas fa-pizza-slice"></i>
+                Pizzeria
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center align-items-center fuente-comun">
+              <li class="nav-item">
+                    <a class="nav-link scrollMenu" href="#seccion-productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollMenu" href="#seccion-locales">Sucursales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollMenu" href="#seccion-eventos">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollMenu" href="#seccion-franquicias">Franquicias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollMenu" href="#seccion-nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contacto
+                    </a>
+                    <ul class="dropdown-menu px-1 text-center" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item scrollMenu" href="#seccion-contacto">Contacto</a></li>
+                        <li><a class="dropdown-item pointer" data-bs-toggle="modal" data-bs-target="#modalTrabajo">Trabajá con nosotros</a></li>
+                        <li><a class="dropdown-item pointer" data-bs-toggle="modal" data-bs-target="#modalProveedor">Proveedores</a></li>
+                        <li><a class="dropdown-item pointer" data-bs-toggle="modal" data-bs-target="#modalVenta">Venta mayorista</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-dark shadow">
+                        <i class="fas fa-cart-plus"></i>
+                        Hacé tu pedido
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seccion modales -->
+    <section class='fuente-comun'>
+        <!-- Modal de trabajo -->
+        <div class="modal fade" id="modalTrabajo" tabindex="-1" aria-labelledby="modalTrabajo" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Trabajá con nosotros</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id='formTrabajo'>
+                    <div class="row">
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Apellido" name='apellido' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="tel" class="form-control" placeholder="Teléfono" name='telefono' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="email" class="form-control" placeholder="E-mail" name='email' required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Adjunte su CV</label>
+                            <input type="file" class="form-control" name='cv' accept=".pdf, .doc" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" placeholder="Mensaje" name='mensaje' required></textarea>
+                        </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form='formTrabajo' class="btn btn-dark">Enviar</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Modal de proveedores -->
+        <div class="modal fade" id="modalProveedor" tabindex="-1" aria-labelledby="modalProveedor" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Proveedores</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id='formProveedor'>
+                    <div class="row">
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Razon Social" name='razon_social' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="tel" class="form-control" placeholder="Teléfono" name='telefono' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="email" class="form-control" placeholder="E-mail" name='email' required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" placeholder="Mensaje" name='mensaje' required></textarea>
+                        </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form='formProveedor' class="btn btn-dark">Enviar</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Modal venta mayorista -->
+        <div class="modal fade" id="modalVenta" tabindex="-1" aria-labelledby="modalVenta" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Venta mayorista</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id='formMayorista'>
+                    <div class="row">
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Apellido" name='apellido' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="tel" class="form-control" placeholder="Teléfono" name='telefono' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="email" class="form-control" placeholder="E-mail" name='email' required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" placeholder="Mensaje" name='mensaje' required></textarea>
+                        </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form='formMayorista' class="btn btn-dark">Enviar</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Modal de Franquicia -->
+        <div class="modal fade" id="modalFranquicia" tabindex="-1" aria-labelledby="modalFranquicia" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Unite a Franquicias Pizzeria</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id='formFranquicia'>
+                    <div class="row">
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <input type="text" class="form-control" placeholder="Apellido" name='apellido' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" placeholder="nacimiento" name='nacimiento' required>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="">Genero</label>
+                            <select name="genero" class="form-control">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="">Estado Civil</label>
+                            <select name="estado" class="form-control">
+                                <option value="soltero">Soltero/a</option>
+                                <option value="casado">Casado/a</option>
+                                <option value="divorciado">Divorciado/a</option>
+                                <option value="viudo">Viudo/a</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6"></div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="">Tipo de documento</label>
+                            <select name="tipoDoc" class="form-control">
+                                <option value="dni">DNI</option>
+                                <option value="pasaporte">Pasaporte</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="">Numero de documento</label>
+                            <input type="text" class="form-control" placeholder="DNI" name="dni" required>
+                        </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form='formFranquicia' class="btn btn-dark">Enviar</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="container-fluid p-0 text-center">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active position-relative">
+                    <img src="./img/carousel-1.jpg" class="d-block w-100 carousel-img" alt="pizza">
+                    <div class="position-absolute text-white top-50 start-50 translate-middle">
+                        <div class="p-3 fondoOscuro shadow">
+                            <h6 class="h1">Promo MEDIODÍA 1</h6>
+                            <p>- 1 Pizza individual de Muzzarella<br/>- 1 bebida de 500cc.</p>
+                        </div>
+                        <p class="p-3 fondoOscuro shadow d-inline-block m-5 rotar-20">A solo<br/><span class="h1">$240</span></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/carousel-2.jpg" class="d-block w-100 carousel-img" alt="empanadas">
+                        <div class="position-absolute text-white top-50 start-50 translate-middle">
+                            <div class="p-3 fondoOscuro shadow">
+                                <h6 class="h1">PROMO MEDIODÍA 2</h6>
+                                <p>- 3 empanadas a elección<br/>- 1 bebida de 500cc.</p>
+                            </div>   
+                            <p class="p-3 fondoOscuro shadow d-inline-block m-5 rotar-20">A solo<br/><span class="h1">$240</span></p>
+                        </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/carousel-3.jpg" class="d-block w-100 carousel-img" alt="pizza">
+                    <div class="position-absolute text-white top-50 start-50 translate-middle">
+                        <div class="p-3 fondoOscuro shadow">
+                            <h6 class="h1">PROMO MEDIODÍA 3</h6>
+                            <p>- 1 Tarta individual<br/>- 1 bebida de 500cc.</p>
+                        </div>
+                        <p class="p-3 fondoOscuro shadow d-inline-block m-5 rotar-20">A solo<br/><span class="h1">$240</span></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/carousel-4.jpg" class="d-block w-100 carousel-img" alt="pizza">
+                    <div class="position-absolute text-white top-50 start-50 translate-middle">
+                        <div class="p-3 fondoOscuro shadow">
+                            <h6 class="h1">PROMO 3X2</h6>
+                            <p>- 2 Pizzas grande de Muzzarella<br/>- 1 Fugazza de Regalo</p>
+                        </div>
+                        <p class="p-3 fondoOscuro shadow d-inline-block m-5 rotar-20">A solo<br/><span class="h1">$840</span></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/carousel-5.jpg" class="d-block w-100 carousel-img" alt="empanadas">
+                    <div class="position-absolute text-white top-50 start-50 translate-middle">
+                        <div class="p-3 fondoOscuro shadow">
+                            <h6 class="h1">TU DOCENA TRAE 14</h6>
+                            <p>- 14 Empanadas a elección</p>
+                        </div>
+                        <p class="p-3 fondoOscuro shadow d-inline-block m-5 rotar-20">A solo<br/><span class="h1">$780</span></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/carousel-6.jpg" class="d-block w-100 carousel-img" alt="pizza">
+                    <div class="position-absolute text-white top-50 start-50 translate-middle">
+                        <div class="p-3 fondoOscuro shadow">
+                            <h6 class="h1">PROMO MIX</h6>
+                            <p>- 6 Empanadas a elección<br/> 1 Pizza de Muzzarella</p>
+                        </div>
+                        <p class="p-3 fondoOscuro shadow d-inline-block m-5 rotar-20">A solo<br/><span class="h1">$780</span></p>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                  <span class='fondoOscuro p-3 h1' aria-hidden="true"><i class="	fas fa-angle-left"></i></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                  <span class='fondoOscuro p-3 h1' aria-hidden="true"><i class="	fas fa-angle-right"></i></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"></div>
+        
+        <section class="text-white text-center seccion-productos" id='seccion-productos'>
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="display-3 animacion">- Empanadas -</h5>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CP - CARNE PICANTE</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>JQ - JAMON Y QUESO</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CC - CARNE SUAVE A CUCH. C/PAPAS Y HUEVO</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CD -CARNE DULCE C/ PASAS Y ACEIT.</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>P - POLLO</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>PV - POLLO AL VERDEO</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>JT - JAMON., QUESO Y TOMATE</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CA - CAPRESSE</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>PS - POLLO CON SALSA BLANCA</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CR - CARBONARA (MUZZA, PANCETA Y HUEVO)</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>4Q - CUATRO QUESOS</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>RA - ROQUEFORT, APIO Y NUEZ</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>RJ - ROQUEFORT Y JAMON</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CM - CHOCLO CON SALSA BLANCA Y MUZZARELA</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>PC - MUZZARELLA, PANCETA, JAMON Y CIRUELAS</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>E - ESPINACA CON SALSA BLANCA</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>QC - QUESO Y CEBOLLA</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CS - CARNE SUAVE</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CH - PANCETA Y CHEDAR</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>VI - VERDEURA INTEGRAL</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CI - CALABAZA INTEGRAL</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>BB - BONDIOLIA A LA BARBACOA</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>CB - CALABRESA</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>DB - DON BURGER</p>
+                    </div>
+                </div>
+                <div class="row pt-5 text-uppercase">
+                    <div class="col-12 animacion">
+                        <h5 class="display-3">- PIZZAS -</h5>
+                        <h5>(GRANDES E INDIVIDUALES)</h5>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Fugazza</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Napolitana con Jamon</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Napolitana</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Muzza con Papas Pai</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Muzza con Panceta y Huevo</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Muzza con Jamon y Huevo</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Muzza con Huevo</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Muzza con Jamon</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Doble Muzzarella</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Muzzarella</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Faina</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Fugazzeta</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Fuga con Jamon</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Calabresa</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Jamon y Morrones</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Panceta</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Roquefort</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Jamon y Provolone</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Jamon y Anana</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Jamon y Roquefort</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Palmitos Especial</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Choclo</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Capresse</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Rucula y Sardo</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Jamon Crudo y Rucula</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <p>Provolone</p>
+                    </div>
+                    <div class="col-12">
+                        <h4>Arma tu pizza como quieras (maximo 2 saboes)</h4>
+                    </div>
+                </div>
+                <div class="row text-uppercase pt-5">
+                    <div class="col-12 animacion">
+                        <h5 class="display-3">- PASTELITOS -</h5>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                        <p>Dulce de Membrillo</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                        <p>Dulce de Batata</p>
+                    </div>
+                    <div class="col-12 col-lg-4 p-2">
+                        <p>Dulce de Leche</p>
+                    </div>
+                </div>
+                <div class="row text-uppercase pt-5">
+                    <div class="col-12">
+                        <h5 class="display-3">- Tartas -</h5>
+                    </div>
+                    <div class="col-12 col-md-6 p-2">
+                        <p>Jamón, queso y huevo</p>
+                    </div>
+                    <div class="col-12 col-md-6 p-2">
+                        <p>Cebolla caramelizada y roquefort</p>
+                    </div>
+                    <div class="col-12 col-md-6 p-2">
+                        <p>Brócoli y muzzarella - Masa Integral</p>
+                    </div>
+                    <div class="col-12 col-md-6 p-2">
+                        <p>Espinaca y muzzarella - Masa Integral</p>
+                    </div>
+                    <div class="col-12 col-md-6 p-2">
+                        <p>Calabaza - Masa Integral</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='seccion-locales' id='seccion-locales'>
+            <div class="container-xl p-3">
+                <div class="row">
+                    <div class="col-12 animacion">
+                        <h5 class="display-3 text-center text-white">SUCURSALES</h5>
+                    </div>
+                    <div class="col-12 col-md-5 locales fuente-comun overflow-auto">
+                        <article class="bg-light p-2 my-2 animacion">
+                                <p class='font-weight-bold m-0 titulo-local'>CABALLITO</p>
+                                <p class='m-0'>Lorem ipsun 233</p>
+                                <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2 animacion">
+                            <p class='font-weight-bold m-0 titulo-local'>BALLESTER</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2 animacion">
+                            <p class='font-weight-bold m-0 titulo-local'>CASEROS</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2 animacion">
+                            <p class='font-weight-bold m-0 titulo-local'>CASTELAR</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2 animacion">
+                            <p class='font-weight-bold m-0 titulo-local'>ESCOBAR</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2">
+                            <p class='font-weight-bold m-0 titulo-local'>HAEDO</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2">
+                            <p class='font-weight-bold m-0 titulo-local'>ITUZAINGO</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                        <article class="bg-light p-2 my-2">
+                            <p class='font-weight-bold m-0 titulo-local'>LOMAS DEL MIRADOR</p>
+                            <p class='m-0'>Lorem ipsun 233</p>
+                            <p class='m-0'><i class='fas fa-phone'></i>  1323-4444 <i class='fas fa-mobile-alt'></i>  11-3333-2222</p>
+                            </p>
+                        </article>
+                    </div>
+                    <div class="d-none d-md-block col-md-7">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13128.999163749153!2d-58.57046667036438!3d-34.64839406297619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7d93bab75a3%3A0xaafe140bc9dea3db!2sRamos%20Mej%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1609441515684!5m2!1ses-419!2sar" class='mapa' frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='seccion-eventos py-5' id='seccion-eventos'>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col col-md-9 col-xl-7 text-center text-md-end text-white fondoOscuro py-5">
+                        <h5 class="display-3 my-4 animacion">EVENTOS</h5>
+                        <p class="display-5 my-4 animacion">Disfrutá nuestros servicios de Pizza Party y Foodtruck en todos tus eventos</p>
+                        <p class="h3">Contactanos a info@pizzeria.com</p>
+                        <button class="btn btn-dark shadow p-4 m-3 fuente-comun animacion">ENVIANOS TU CONTACTO!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-franquicias py-5" id="seccion-franquicias">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 text-center">
+                        <h5 class="display-3 my-4 animacion">FRANQUICIAS</h5>
+                        <h5 class='h3 fuente-comun animacion'>Querés tener tu franquicia?</h5>
+                        <img src="./img/franquicia.jpg" alt="local" class='img-fluid my-2 animacion'>
+                    </div>
+                    <div class="col-12 col-lg-6 text-center text-md-start fuente-comun d-flex">
+                        <div class="d-flex flex-wrap align-self-center">
+                            <article class="franquicia-info animacion">
+                                <div class="d-inline ">
+                                    <i class='far fa-handshake display-1'></i>
+                                    <span class='display-3 contador' data-valor='8' data-activado=false>8</span>
+                                </div>
+                                <p><strong>Locales</strong></p>
+                                    <p class="text-gris">Contamos con 8 locales en Gran Buenos Aires y Capital Federal.</p>
+                            </article>
+                            <article class="franquicia-info animacion">
+                                <div class="d-inline display-1">
+                                    <i class='fas fa-shopping-bag display-1'></i>
+                                    <span class='display-3 contador' data-valor='60' data-activado=false>60</span>
+                                </div>
+                                <p><strong>Sabores</strong></p>
+                                <p class="text-gris">Pizzas y empanadas</p>
+                            </article>
+                            <article class="franquicia-info animacion">
+                                <i class="fas fa-chart-line display-1"></i>
+                                <span class='display-5 d-block'>+<span class="contador" data-valor='110' data-activado=false>110</span>.000</span>                
+                                <p><strong>Más de 110 mil clientes</strong></p>
+                            </article>
+                            <article class="franquicia-info animacion">
+                                <i class='	far fa-money-bill-alt display-1'></i>
+                                <span class='display-5 d-block'>Consultar</span>
+                                <p><strong>Inversión inicial aproximada</strong></p>
+                            </article>
+                            <article class="w-100 text-center">
+                                <button class='btn btn-dark py-2 px-5' data-bs-toggle="modal" data-bs-target="#modalFranquicia">CONTACTANOS</button>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='seccion-nosotros py-5' id='seccion-nosotros'>
+            <div class="container">
+                <div class="row text-white text-center text-md-start">
+                    <div class="col-12"><h5 class="display-3 text-center text-white animacion">NOSOTROS</h5></div>
+                    <div class="col-12 col-lg-6  fuente-comun">
+                        <p class='animacion'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae labore consectetur quia reprehenderit sed earum, quas dolor perspiciatis! Molestiae corporis deserunt ullam dignissimos accusantium itaque autem eligendi, mollitia harum numquam!</p>
+                        <p class='animacion'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab iusto velit dolorum cupiditate ad corrupti enim ducimus, quis labore, fugit quam perferendis dolor sed exercitationem a modi in! Porro, eveniet?
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium laudantium dolorem ad obcaecati quis mollitia corporis eius nam atque neque maxime asperiores saepe enim quod temporibus, debitis officiis magnam commodi?</p>
+                        <p class='animacion'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium natus molestias tempora a, enim fuga nemo amet, consectetur nesciunt, harum aspernatur? Quod nisi magni quasi eveniet deleniti debitis libero saepe.Rem voluptas odio omnis esse quod id. Cumque consequuntur omnis quisquam harum officia, praesentium placeat provident explicabo itaque animi optio beatae voluptatem quo repellat quae? Repudiandae iure dolores laboriosam accusantium.</p>
+                    </div>
+                    <div class="col-12 col-lg-6  fuente-comun">
+                        <p><strong>Vision</strong></p>
+                        <p class='animacion'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem hic assumenda cupiditate ea, ipsa neque distinctio obcaecati eos laborum aliquam perferendis iusto nemo excepturi eaque! Voluptatibus consectetur cumque maiores molestias!</p>
+                        <p><strong>Mision</strong></p>
+                        <p class='animacion'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, dolorum. Iure, doloremque vero minima veritatis eveniet id nulla ullam dignissimos nihil quos impedit at saepe tempore, aperiam laudantium voluptas. Esse.</p>
+                        <iframe class="video animacion" src="https://www.youtube.com/embed/5MfYsHz4VJU?start=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-contacto py-5" id='seccion-contacto'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13128.999163749153!2d-58.57046667036438!3d-34.64839406297619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7d93bab75a3%3A0xaafe140bc9dea3db!2sRamos%20Mej%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1609441515684!5m2!1ses-419!2sar" class='mapa' frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    <div class="col-12 col-md-6 fuente-comun animacion">
+                        <h2><i class='far fa-envelope-open'></i>  Contactanos</h2>
+                        <div class="text-center my-4 text-gris">
+                            <p class="m-0">Dirección: Lorem, ipsum 723, Ramos Mejia, Buenos Aires</p>
+                            <p class="m-0">Teléfono: (+54) 011 4444-4144</p>
+                            <p class="m-0">Email: info@pizzeria.com</p>
+                        </div>
+                        <form action="" class='animacion'>
+                            <div class="form-group mb-3">
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <textarea class="form-control" id='mensaje' name='mensaje' placeholder="Mensaje" required></textarea>
+                            </div>
+                            <button type='submit' class="btn btn-dark shadow px-5 py-3">ENVIAR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-12 col-md-3 text-center mb-2 animacion">
+                    <a href="#inicio" class=" h1 text-white">
+                        <i class="fas fa-pizza-slice"></i>
+                        Pizzeria
+                    </a>
+                </div>
+                <div class="col-12 col-md-9 fuente-comun animacion">
+                    <ul class="d-flex flex-wrap justify-content-center">
+                        <li>
+                            <a href="#inicio" class='text-white p-2 scrollMenu'>INICIO</a>
+                        </li>
+                        <li>
+                            <a href="#seccion-productos" class='text-white p-2 scrollMenu'>PRODUCTOS</a>
+                        </li>
+                        <li>
+                            <a href="#seccion-locales" class='text-white p-2 scrollMenu'>SUCURSALES</a>
+                        </li>
+                        <li>
+                            <a href="#seccion-eventos" class='text-white p-2 scrollMenu'>EVENTOS</a>
+                        </li>
+                        <li>
+                            <a href="#seccion-franquicias" class='text-white p-2 scrollMenu'>FRANQUICIAS</a>
+                        </li>
+                        <li>
+                            <a href="#seccion-nosotros" class='text-white p-2'>NOSOTROS</a>
+                        </li>
+                        <li>
+                            <a href="#seccion-contacto" class='text-white p-2 scrollMenu'>CONTACTO</a>
+                        </li>
+                    </ul>
+                    <a class='text-white pointer' data-bs-toggle="modal" data-bs-target="#modalTrabajo">Trabajá con nosotros</a>
+                    <hr/>
+                </div>
+                <div class="col-12 fuente-comun text-white text-center d-md-flex justify-content-between align-items-center">
+                    <p class="m-0 text-small">© Copyright 2020 Pizzeria - Todos los derechos reservados</p>
+                    <div class="d-flex justify-content-center">
+                        <a href='#'>
+                            <img src="./img/facebook.ico" alt="facebook" class="icono-social"/>
+                        </a>
+                        <a href='#'>
+                            <img src="./img/instagram.ico" alt="instagram" class="icono-social"/>
+                        </a>
+                        <a href='#'>
+                            <img src="./img/youtube.ico" alt="youtube" class="icono-social"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src='./js/codigo.js'></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
